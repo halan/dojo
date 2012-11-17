@@ -3,7 +3,7 @@ require 'spec_helper'
 describe FizzBuzz do
   subject { FizzBuzz.new input }
 
-  context 'with length 100' do
+  context 'with input 100' do
     let(:input) { 100 }
 
     its(:to_ary) { should have(input).items }
