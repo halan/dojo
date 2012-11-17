@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe FizzBuzz do
-  subject { FizzBuzz.new length }
+  subject { FizzBuzz.new input }
 
   context 'with length 100' do
-    let(:length) { 100 }
+    let(:input) { 100 }
 
-    its(:to_ary) { should have(length).items }
+    its(:to_ary) { should have(input).items }
     its(:first) { should == 1 }
 
     describe 'Fizz' do
@@ -41,4 +41,9 @@ describe FizzBuzz do
       end
     end
   end
+
+  context 'with input 2..5' do
+    let(:input) { (2..5) }
+    its(:to_ary) { should == [2, 'Fizz', 4, 'Buzz']}
   end
+end

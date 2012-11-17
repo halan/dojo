@@ -3,8 +3,8 @@ class FizzBuzz < Array
   @@fizz = 3
   @@buzz = 5
 
-  def initialize length
-    super (1..length).to_a
+  def initialize input
+    super range(input).to_a
     process!
   end
 
@@ -13,6 +13,10 @@ class FizzBuzz < Array
   end
 
   protected
+  def range input
+    if input.kind_of?(Range) then input else (1..input) end
+  end
+
   def process!
     map! {|n| calc n }
   end
