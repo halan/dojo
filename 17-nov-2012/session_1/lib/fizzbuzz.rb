@@ -4,7 +4,7 @@ class FizzBuzz < Array
   @@buzz = 5
 
   def initialize input
-    super range(input).to_a
+    super [*range(input)]
     process!
   end
 
@@ -14,7 +14,7 @@ class FizzBuzz < Array
 
   protected
   def range input
-    if input.kind_of?(Range) then input else (1..input) end
+    if input.respond_to? :each then input else (1..input) end
   end
 
   def process!

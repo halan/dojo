@@ -46,4 +46,9 @@ describe FizzBuzz do
     let(:input) { (2..5) }
     its(:to_ary) { should == [2, 'Fizz', 4, 'Buzz']}
   end
+
+  context 'with input [2, 3, 4, 5]' do
+    let(:input) { [2, 3, 4, 5] }
+    its(:to_ary) { should == [2, 'Fizz', 4, 'Buzz']}
+  end
 end
