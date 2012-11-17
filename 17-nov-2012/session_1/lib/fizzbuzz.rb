@@ -1,4 +1,8 @@
 class FizzBuzz < Array
+
+  @@fizz = 3
+  @@buzz = 5
+
   def initialize length
     super (1..length).to_a
     process!
@@ -23,11 +27,11 @@ class FizzBuzz < Array
   end
 
   def fizz? number
-    number.modulo(3).zero?
+    number.modulo(@@fizz).zero?
   end
 
   def buzz? number
-    number.modulo(5).zero?
+    number.modulo(@@buzz).zero?
   end
 
   def fizzbuzz? number
