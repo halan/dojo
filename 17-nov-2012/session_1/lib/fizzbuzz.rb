@@ -14,9 +14,21 @@ class FizzBuzz < Array
   end
 
   def calc number
-    if    (number % 3).zero?  and (number % 5).zero? then 'FizzBuzz'
-    elsif (number % 3).zero? then 'Fizz'
-    elsif (number % 5).zero? then 'Buzz'
+    if    fizzbuzz? number then 'FizzBuzz'
+    elsif fizz? number then 'Fizz'
+    elsif buzz? number then 'Buzz'
     else  number end
+  end
+
+  def fizz? number
+    number.modulo(3).zero?
+  end
+
+  def buzz? number
+    number.modulo(5).zero?
+  end
+
+  def fizzbuzz? number
+    fizz? number and buzz? number
   end
 end
