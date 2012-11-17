@@ -14,10 +14,12 @@ class FizzBuzz < Array
   end
 
   def calc number
-    if    fizzbuzz? number then 'FizzBuzz'
-    elsif fizz? number then 'Fizz'
-    elsif buzz? number then 'Buzz'
-    else  number end
+    case number
+    when ->(n) {fizzbuzz? n} then 'FizzBuzz'
+    when ->(n) {fizz? n}     then 'Fizz'
+    when ->(n) {buzz? n}     then 'Buzz'
+    else number
+    end
   end
 
   def fizz? number
